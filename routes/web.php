@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('user/view',[UserController::class,'view']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->name('dashboard');
 
+Route::get('admin/logout',[AdminController::class,'Logout'])->name('admin.logout');
 
