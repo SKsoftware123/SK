@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{asset('backend/../images/favicon.ico')}}">
 
-    <title>Sunny Admin - Dashboard</title>
+    <title>Admin - Dashboard</title>
     
 	<!-- Vendors Style-->
     

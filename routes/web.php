@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\backend\MenuController;
+use App\Http\Controllers\frontend\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +15,16 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//Forntend
+Route::get('/',[HomeController::class,'display'])->name('front.display');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/menu',[MenuController::class,'displayMenu'])->name('menu');
 
 Route::get('admin/logout',[AdminController::class,'Logout'])->name('admin.logout');
 
