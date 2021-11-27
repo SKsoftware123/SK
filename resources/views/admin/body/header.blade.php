@@ -17,7 +17,16 @@
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">
-     
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+	  <style>
+		  .text {
+    font-size: 1rem;
+    margin-top: 0.5em;
+    text-align: center;
+    letter-spacing: 0px;
+    font-weight: 400;
+}
+	  </style>	  
   </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
