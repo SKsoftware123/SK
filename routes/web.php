@@ -5,7 +5,7 @@ use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\MenuController;
 use App\Http\Controllers\frontend\HomeController;
-
+use App\Http\Controllers\backend\FrontSettingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,24 +23,39 @@ use App\Http\Controllers\frontend\HomeController;
 // });
 
 //frontend
-Route::get('/',[HomeController::class,'display']);
+
+Route::get('/',[HomeController::class,'display'])->name('home');
+Route::get('about-us', function () {
+    return view('frontend.about-us');
+})->name('about-us');
+Route::get('contact-us', function () {
+    return view('frontend.contact-us');
+})->name('contact-us');
+Route::get('service', function () {
+    return view('frontend.service');
+})->name('service');
+Route::get('gallery', function () {
+    return view('frontend.gallery');
+})->name('gallery');
 
 //backend
 
 Route::get('login',[AdminController::class,'Login'])->name('login');
 
 Route::get('admin/logout',[AdminController::class,'Logout'])->name('admin.logout');
-// .................Menu......................
-// Route::middleware(['auth:sanctum', 'verified'])->get('menu',[MenuController::class,'menuCreate'])->name('menu.create');
-
-// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-//     return view('admin.index');
-// })->name('dashboard');
-
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 Route::get('dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-// ..........................Menu.....................................   
+
+//..........................Front Setting............................
+
+Route::get('setting/view',[FrontSettingController::class,'settingIndex'])->name('setting.view');  
+Route::get('setting',[FrontSettingController::class,'settingCreate'])->name('setting.create');
+Route::post('setting/store',[FrontSettingController::class,'settingStore'])->name('setting.store');
+Route::get('setting/edit/{id}',[FrontSettingController::class,'settingEdit'])->name('setting.edit');
+Route::post('setting/update/{id}',[FrontSettingController::class,'settingUpdate'])->name('setting.update');
+
+//..........................Menu.....................................   
 Route::get('menu/view',[MenuController::class,'menuIndex'])->name('menu.view');  
 Route::get('menu',[MenuController::class,'menuCreate'])->name('menu.create');
 Route::post('menu/store',[MenuController::class,'menuStore'])->name('menu.store');

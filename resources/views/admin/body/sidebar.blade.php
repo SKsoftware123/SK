@@ -24,10 +24,19 @@
 			      <span>Dashboard</span>
           </a>
         </li>  
-        <li>
+        <!-- <li>
           <a href="{{url('/menu/view')}}">
             <i data-feather="menu"></i>
 			      <span>Menu</span>
+          </a>
+        </li>  -->
+              @php
+                 $data=DB::table('front_settings')->first();
+              @endphp
+       <li>
+          <a href="{{url('setting/edit/'.$data->id)}}">
+            <i data-feather="settings"></i>
+			      <span>Front-Setting</span>
           </a>
         </li> 
        
