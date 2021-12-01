@@ -33,7 +33,7 @@ class FrontSettingController extends Controller
         );
         return redirect()->route('setting.view')->with($notification);
     }
-    public function settingEdit($id)
+    public function settingEdit($id=null)
     {
         $data=FrontSetting::find($id);
         return view('admin.front_setting.setting_edit',compact('data'));

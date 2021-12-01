@@ -23,6 +23,12 @@
             <i data-feather="pie-chart"></i>
 			      <span>Dashboard</span>
           </a>
+        </li> 
+        <li>
+          <a href="{{url('slider/view')}}">
+            <i data-feather="sliders"></i>
+			      <span>Slider</span>
+          </a>
         </li>  
         <!-- <li>
           <a href="{{url('/menu/view')}}">

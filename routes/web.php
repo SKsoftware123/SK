@@ -6,6 +6,7 @@ use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\backend\MenuController;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\backend\FrontSettingController;
+use App\Http\Controllers\backend\SliderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,4 +63,12 @@ Route::post('menu/store',[MenuController::class,'menuStore'])->name('menu.store'
 Route::get('menu/delete/{id}',[MenuController::class,'menuDel'])->name('menu.del');
 Route::get('menu/edit/{id}',[MenuController::class,'editMenu'])->name('menu.edit');
 Route::post('menu/store/{id}',[MenuController::class,'menuUpdate'])->name('menu.update');
+
+//..........................Slider.....................................   
+Route::get('slider/view',[SliderController::class,'sliderIndex'])->name('slider.view');  
+Route::get('slider',[SliderController::class,'sliderCreate'])->name('slider.create');
+Route::post('slider/store',[SliderController::class,'sliderStore'])->name('slider.store');
+Route::get('slider/delete/{id}',[SliderController::class,'sliderDel'])->name('slider.del');
+Route::get('slider/edit/{id}',[SliderController::class,'sliderMenu'])->name('slider.edit');
+Route::post('slider/store/{id}',[SliderController::class,'sliderUpdate'])->name('slider.update');
 });
