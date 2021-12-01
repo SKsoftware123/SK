@@ -29,7 +29,7 @@
 								</div>
 								<!-- /.form group -->
 								<div class="form-group">
-									<label>Sub Title</label>
+									<label>Subtitle</label>
 										<div class="input-group">
 											<div class="input-group-addon">
 												<i class="fa fa-phone"></i>
